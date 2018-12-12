@@ -39,98 +39,122 @@ public class Main {
 
         while (roundCounter < 4){
 
+            //player 1's round
+            while(true) {
+                board.printBoard();
 
 
-            board.printBoard();
+                while (row != 1 && row != 2 && row != 3) { //works but a statement where there is no need to constantly set row and col to 0 would be better
 
+                    System.out.println(player1.name + " It's your turn. Make your move.");
+                    System.out.println("select which row you want to play, 1, 2 or 3: ");
 
-            while(row != 1 && row != 2 && row !=3) {
+                    try {
+                        row = sc.nextInt();
 
-                System.out.println(player1.name + " It's your turn. Make your move.");
-                System.out.println("select which row you want to play, 1, 2 or 3: ");
+                    } catch (Exception e) {
+                        //System.out.println("Du kan bara mata in heltal!");
+                        sc.nextLine();
+                    }
+                    if (row != 1 && row != 2 && row != 3) {
+                        System.out.println("You can only select 1, 2 or 3!");
+                        System.out.println();
+                    }
+                }
 
-                try {
-                    row = sc.nextInt();
+                while (col != 1 && col != 2 && col != 3) {
+
+                    System.out.println("select which column you want to play. 1, 2 or 3: ");
+
+                    try {
+
+                        col = sc.nextInt();
+                    } catch (Exception e) {
+                        sc.nextLine();
+                    }
+
+                    if (col != 1 && col != 2 && col != 3) {
+                        System.out.println("You can only select 1, 2 or 3!");
+                        System.out.println();
+                    }
+
 
                 }
-                catch (Exception e) {
-                    //System.out.println("Du kan bara mata in heltal!");
+
+                if (board.getGameBoard(row -1, col -1).equals(" ")) {
+
+                    board.setGameBoard(row, col, player1.getMarker());
+                    break;  //seems a bit barbaric.
+                } else {
+                    System.out.println("This space has already been chosen");
+                    System.out.println("Try again, and please choose an empty field!");
                     sc.nextLine();
-                }
-                if(row != 1 && row != 2 && row !=3){
-                    System.out.println("You can only select 1, 2 or 3!");
-                    System.out.println();
+                    row = 0;
+                    col = 0;
                 }
             }
 
-            while(col != 1 && col != 2 && col !=3) {
-
-                System.out.println("select which column you want to play. 1, 2 or 3: ");
-
-                try{
-
-                    col = sc.nextInt();
-                }
-                catch (Exception e){
-                    sc.nextLine();
-                }
-
-                if(col != 1 && col != 2 && col != 3){
-                    System.out.println("You can only select 1, 2 or 3!");
-                    System.out.println();
-                }
 
 
-
-            }
-
-            board.setGameBoard(row, col, player1.getMarker());
             row = 0;
             col = 0;
 
-            board.printBoard();
+            //player 2's round
+            while (true) {
 
-            while(row != 1 && row != 2 && row !=3) {
+                board.printBoard();
 
-                System.out.println(player2.name + " It's your turn. Make your move.");
-                System.out.println("select which row you want to play, 1, 2 or 3: ");
+                while (row != 1 && row != 2 && row != 3) {
 
-                try {
-                    row = sc.nextInt();
+                    System.out.println(player2.name + " It's your turn. Make your move.");
+                    System.out.println("select which row you want to play, 1, 2 or 3: ");
+
+                    try {
+                        row = sc.nextInt();
+
+                    } catch (Exception e) {
+                        //System.out.println("Du kan bara mata in heltal!");
+                        sc.nextLine();
+                    }
+                    if (row != 1 && row != 2 && row != 3) {
+                        System.out.println("You can only select 1, 2 or 3!");
+                        System.out.println();
+                    }
+                }
+
+                while (col != 1 && col != 2 && col != 3) {
+
+                    System.out.println("select which column you want to play. 1, 2 or 3: ");
+
+                    try {
+
+                        col = sc.nextInt();
+                    } catch (Exception e) {
+                        sc.nextLine();
+                    }
+
+                    if (col != 1 && col != 2 && col != 3) {
+                        System.out.println("You can only select 1, 2 or 3!");
+                        System.out.println();
+                    }
+
 
                 }
-                catch (Exception e) {
-                    //System.out.println("Du kan bara mata in heltal!");
+
+                if (board.getGameBoard(row - 1, col - 1).equals(" ")) {
+
+                    board.setGameBoard(row, col, player2.getMarker());
+                    break;  //seems a bit barbaric.
+                } else {
+                    System.out.println("This space has already been chosen");
+                    System.out.println("Try again, and please choose an empty field!");
                     sc.nextLine();
-                }
-                if(row != 1 && row != 2 && row !=3){
-                    System.out.println("You can only select 1, 2 or 3!");
-                    System.out.println();
+                    row = 0;
+                    col = 0;
                 }
             }
 
-            while(col != 1 && col != 2 && col !=3) {
-
-                System.out.println("select which column you want to play. 1, 2 or 3: ");
-
-                try{
-
-                    col = sc.nextInt();
-                }
-                catch (Exception e){
-                    sc.nextLine();
-                }
-
-                if(col != 1 && col != 2 && col != 3){
-                    System.out.println("You can only select 1, 2 or 3!");
-                    System.out.println();
-                }
-
-
-
-            }
-
-            board.setGameBoard(row, col, player2.getMarker());
+            //board.setGameBoard(row, col, player2.getMarker());
             row = 0;
             col = 0;
 
@@ -143,11 +167,6 @@ public class Main {
             col = sc.nextInt();
 
             board.setGameBoard(row, col, player2.getMarker()); */
-
-
-
-
-
 
 
             roundCounter++;

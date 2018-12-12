@@ -23,8 +23,8 @@ public class Board {
         this.gameBoard[i-1][j-1] = gameBoard;
     }
 
-    public String[][] getGameBoard() {
-        return gameBoard;
+    public String getGameBoard(int i, int j) {
+        return gameBoard[i][j];
     }
 
     public int getSize() {
