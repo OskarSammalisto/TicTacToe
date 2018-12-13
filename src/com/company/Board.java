@@ -50,7 +50,7 @@ public class Board {
         System.out.println("+---+---+---+");
     }
 
-    public boolean winCondition(String a){ //Should this be boolean or is there a better variable?
+    public boolean winCondition(String a){ //Should this be boolean or is there a better variable? Boolean is good.
 
 
         //three horizontal wins

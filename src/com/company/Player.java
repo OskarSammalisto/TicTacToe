@@ -37,7 +37,7 @@ public class Player {
         // System.out.println(player1.name + " plays first and s/he plays with: " +player1.marker);
         //System.out.println(player2.name + " plays second and s/he plays with: " +player2.marker);
         Scanner sc = new Scanner(System.in);
-        System.out.println(); //explanation of grid, which field is what!!!!!!!!!
+
 
         int row = 0;
         int col = 0;

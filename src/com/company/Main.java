@@ -35,6 +35,19 @@ public class Main {
 
         System.out.println(player1.name + " plays first and s/he plays with: " +player1.marker);
         System.out.println(player2.name + " plays second and s/he plays with: " +player2.marker);
+        System.out.println("how to play!"); //explanation of grid, which field is what!!!!!!!!!
+        System.out.println("First you select which row you want to play in.");
+        System.out.println("Then you select which column you want to play in.");
+        System.out.println("       ↓ COLUMN ↓    ");
+        System.out.println("     1     2     3   ");
+        System.out.println("  +-----+-----+-----+");
+        System.out.println("  |     +     +     + 1 ←");
+        System.out.println("  +-----+-----+-----+   R");
+        System.out.println("  |     +     +     + 2 O");
+        System.out.println("  +-----+-----+-----+   W");
+        System.out.println("  |     +     +     + 3 ←");
+        System.out.println("  +-----+-----+-----+");
+
 
         while(true){
             int victory = 0;
@@ -74,10 +87,11 @@ public class Main {
 
                         }
                     }
-                    else {
+                    else if(victory == 0) {
                         board.printBoard();
                         System.out.println("This game has ended as a draw");
                         System.out.println("Get ready for the next round!");
+
                     }
 
                 }
