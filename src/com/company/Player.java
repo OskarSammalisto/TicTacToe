@@ -101,23 +101,12 @@ public class Player {
             }
         }
 
-        //winCheck = board.winCondition(currentPlayer.marker);
-        //if (winCheck == true) {
-        //    currentPlayer.increaseScore();
-         //   System.out.println("Congratulations " + currentPlayer.name + "! You have won this round and you have: " + currentPlayer.score + " points.");
-        //    System.out.println("Get ready for the next round!");
-           // row = 0;
-           // col = 0;
-            // break;
-       // }
+
 
 
         row = 0;
         col = 0;
 
-        /* if(roundCounter >= 8){
-                board.printBoard();
-                break;
-            }*/
+
     }
 }
